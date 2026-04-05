@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-main: "Onest", Arial, Helvetica, sans-serif;
+
+  /* ── Palette ──────────────────────────────────────── */
+  --c-navy:      #1b4579;   /* dark anchor */
+  --c-mid:       #2d6fa0;   /* mid blue */
+  --c-sky:       #75b5d0;   /* light blue */
+  --c-navy-dark: #122f55;   /* footer / deepest */
+
+  /* light surface tints */
+  --c-surface-1: #eef6fb;   /* very light blue — section bg */
+  --c-surface-2: #daedf7;   /* slightly deeper tint */
+
+  /* text */
+  --c-text:      #1b4579;   /* main text on light bg */
+  --c-muted:     #5a8fb5;   /* muted text on light bg */
+
+  /* gradient */
+  --c-gradient: linear-gradient(135deg, #1b4579 0%, #75b5d0 100%);
+  --c-gradient-v: linear-gradient(180deg, #1b4579 0%, #2d6fa0 60%, #75b5d0 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Reset ───────────────────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main);
+  background: var(--c-surface-1);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--c-navy); color: #fff; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-surface-1); }
+::-webkit-scrollbar-thumb { background: var(--c-sky); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-mid); }
+
+/* ─── Typography helpers ──────────────────────────────────────── */
+.display {
+  font-family: var(--font-main);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.label {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+/* ─── Buttons ─────────────────────────────────────────────────── */
+
+/* outline on light bg — navy border, fills navy on hover */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid var(--c-sky);
+  border-radius: 30px;
+  padding: 12px 32px;
+  color: var(--c-navy);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.btn-outline:hover {
+  border-color: var(--c-navy);
+  background: var(--c-navy);
+  color: #fff;
+}
+
+/* solid navy */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid var(--c-navy);
+  border-radius: 30px;
+  padding: 12px 32px;
+  color: #fff;
+  background: var(--c-navy);
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.btn-solid:hover {
+  background: var(--c-mid);
+  border-color: var(--c-mid);
+}
+
+/* outline white — for dark/gradient sections */
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.55);
+  border-radius: 30px;
+  padding: 12px 32px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.btn-outline-white:hover {
+  border-color: #fff;
+  background: #fff;
+  color: var(--c-navy);
+}
+
+/* solid white — for dark/gradient sections */
+.btn-solid-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 12px 32px;
+  color: var(--c-navy);
+  background: #fff;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+.btn-solid-white:hover { opacity: 0.85; }
+
+/* ─── Cards ───────────────────────────────────────────────────── */
+.card-hover {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-hover:hover {
+  box-shadow: 0px 8px 32px 0px rgba(27, 69, 121, 0.18);
+  transform: translateY(-2px);
+}
+
+/* ─── Section spacing ─────────────────────────────────────────── */
+.section-pad {
+  padding: 100px 40px;
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 64px 20px; }
 }
