@@ -1,0 +1,20 @@
+Put your images here:
+- hero.jpg         (hero background, ~1920x1080)
+- about.jpg        (about section, ~800x600)
+- join-bg.jpg      (join banner background, ~1920x600)
+- event-elbrus.jpg (event card, ~800x500)
+- event-crimea.jpg (event card)
+- event-fan.jpg    (event card)
+- event-ice.jpg    (event card)
+- team-1.jpg       (team member portrait, ~600x800)
+- team-2.jpg
+- team-3.jpg
+- story-1.jpg      (story cover, ~800x500)
+- story-2.jpg
+- story-3.jpg
+- arch-1.jpg       (archive thumbnail, ~200x150)
+- arch-2.jpg
+- arch-3.jpg
+- arch-4.jpg
+- arch-5.jpg
+- arch-6.jpg
