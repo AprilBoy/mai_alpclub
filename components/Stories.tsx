@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { stories } from "@/lib/stories";
+import { asset } from "@/lib/asset";
 
 export default function Stories() {
   return (
@@ -35,7 +36,7 @@ function StoryCard({ story }: { story: (typeof stories)[0] }) {
             style={{
               width: "100%",
               height: "100%",
-              backgroundImage: `url(${story.image})`,
+              backgroundImage: `url(${asset(story.image)})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundColor: "var(--c-surface-2)",

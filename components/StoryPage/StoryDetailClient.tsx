@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, Clock, User, X } from "lucide-react";
 import type { Story, StorySection } from "@/lib/stories";
+import { asset } from "@/lib/asset";
 
 export default function StoryDetailClient({ story }: { story: Story }) {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ export default function StoryDetailClient({ story }: { story: Story }) {
             inset: 0,
             top: "-15%",
             height: "130%",
-            backgroundImage: `url(${story.image})`,
+            backgroundImage: `url(${asset(story.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "var(--c-navy)",
@@ -197,7 +198,7 @@ export default function StoryDetailClient({ story }: { story: Story }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      backgroundImage: `url(${photo.src})`,
+                      backgroundImage: `url(${asset(photo.src)})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       backgroundColor: "rgba(27,69,121,0.4)",
@@ -303,7 +304,7 @@ export default function StoryDetailClient({ story }: { story: Story }) {
               style={{
                 width: "100%",
                 aspectRatio: "16/10",
-                backgroundImage: `url(${story.gallery[lightbox].src})`,
+                backgroundImage: `url(${asset(story.gallery[lightbox].src)})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundColor: "var(--c-navy)",

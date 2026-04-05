@@ -1,5 +1,7 @@
 "use client";
 
+import { asset } from "@/lib/asset";
+
 export default function JoinBanner() {
   return (
     <section
@@ -19,7 +21,7 @@ export default function JoinBanner() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/images/join-bg.jpg')",
+          backgroundImage: `url(${asset('/images/join-bg.jpg')})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "var(--c-navy)",

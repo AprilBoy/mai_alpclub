@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 const stats = [
   { value: "1935", label: "год основания" },
   { value: "500+", label: "выпускников" },
@@ -51,7 +53,7 @@ export default function About() {
             <div
               style={{
                 height: "420px",
-                backgroundImage: "url('/images/about_1.jpg')",
+                backgroundImage: `url(${asset('/images/about_1.jpg')})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundColor: "var(--c-surface-2)",

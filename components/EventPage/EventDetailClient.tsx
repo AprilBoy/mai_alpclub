@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Accordion from "./Accordion";
 import type { Event } from "@/lib/events";
+import { asset } from "@/lib/asset";
 import { categoryColors } from "@/lib/events";
 import type { EventDetail } from "@/lib/eventDetails";
 import { MapPin, Calendar, Users, Mountain, Clock, ArrowLeft, Check, X } from "lucide-react";
@@ -50,7 +51,7 @@ export default function EventDetailClient({ event, detail }: Props) {
             inset: 0,
             top: "-15%",
             height: "130%",
-            backgroundImage: `url(${event.image})`,
+            backgroundImage: `url(${asset(event.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "var(--c-navy)",

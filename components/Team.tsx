@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { team } from "@/lib/team";
+import { asset } from "@/lib/asset";
 
 export default function Team() {
   return (
@@ -43,7 +44,7 @@ function TeamCard({ member }: { member: (typeof team)[0] }) {
             style={{
               width: "100%",
               height: "100%",
-              backgroundImage: `url(${member.image})`,
+              backgroundImage: `url(${asset(member.image)})`,
               backgroundSize: "cover",
               backgroundPosition: "center top",
               backgroundColor: "rgba(27,69,121,0.4)",

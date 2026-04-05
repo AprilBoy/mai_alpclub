@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { MapPin, Clock, Calendar, ChevronLeft } from "lucide-react";
 import type { TrainingDetail } from "@/lib/trainings";
+import { asset } from "@/lib/asset";
 
 export default function TrainingDetailClient({ training }: { training: TrainingDetail }) {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ export default function TrainingDetailClient({ training }: { training: TrainingD
             inset: 0,
             top: "-15%",
             height: "130%",
-            backgroundImage: `url(${training.image})`,
+            backgroundImage: `url(${asset(training.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "var(--c-navy)",

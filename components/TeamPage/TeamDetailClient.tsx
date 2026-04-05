@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, Mail, X } from "lucide-react";
 import type { TeamMember } from "@/lib/team";
+import { asset } from "@/lib/asset";
 
 export default function TeamDetailClient({ member }: { member: TeamMember }) {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ export default function TeamDetailClient({ member }: { member: TeamMember }) {
             inset: 0,
             top: "-15%",
             height: "130%",
-            backgroundImage: `url(${member.image})`,
+            backgroundImage: `url(${asset(member.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center top",
             backgroundColor: "var(--c-navy)",
@@ -477,7 +478,7 @@ export default function TeamDetailClient({ member }: { member: TeamMember }) {
               style={{
                 width: "100%",
                 aspectRatio: "16/10",
-                backgroundImage: `url(${member.gallery[lightbox].src})`,
+                backgroundImage: `url(${asset(member.gallery[lightbox].src)})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundColor: "var(--c-navy)",

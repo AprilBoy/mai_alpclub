@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { events, categories, categoryColors, type Category } from "@/lib/events";
+import { asset } from "@/lib/asset";
 import { MapPin, Calendar, Users } from "lucide-react";
 
 export default function EventsClient() {
@@ -295,7 +296,7 @@ function EventCard({ event }: { event: (typeof events)[0] }) {
           style={{
             width: "100%",
             height: "100%",
-            backgroundImage: `url(${event.image})`,
+            backgroundImage: `url(${asset(event.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "var(--c-surface-2)",

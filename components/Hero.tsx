@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export default function Hero() {
           inset: 0,
           top: "-15%",
           height: "130%",
-          backgroundImage: "url('/images/main.jpg')",
+          backgroundImage: `url(${asset('/images/main.jpg')})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "#1b4579",

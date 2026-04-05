@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const events = [
   {
@@ -137,7 +138,7 @@ function EventCard({ event }: { event: (typeof events)[0] }) {
           style={{
             width: "100%",
             height: "100%",
-            backgroundImage: `url(${event.image})`,
+            backgroundImage: `url(${asset(event.image)})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "var(--c-surface-2)",

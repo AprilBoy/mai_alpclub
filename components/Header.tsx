@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const navLinks = [
   { label: "Мероприятия", href: "#events" },
@@ -66,7 +67,7 @@ export default function Header() {
             style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}
           >
             <Image
-              src="/images/file.svg"
+              src={asset("/images/file.svg")}
               alt="Альпклуб МАИ"
               width={100}
               height={100}
